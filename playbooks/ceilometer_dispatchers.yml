@@ -1,0 +1,5 @@
+- name: Install ceilometer dispatchers
+  hosts: ceilometer_all
+  user: root
+  roles:
+    - role: ceilometer_dispatchers

@@ -1,0 +1,5 @@
+- name: Install ceilometer_dispatchers
+  pip:
+    name: "{{ ceilometer_dispatchers_pip_package }}"
+    virtualenv: /openstack/venvs/ceilometer-{{ openstack_release }}
+  notify: Restart ceilometer services

@@ -4,12 +4,12 @@ from ceilometer_dispatchers.meta import description
 
 entry_points = {
     'ceilometer.dispatcher.meter': [
-        'influx = ceilometer.dispatcher.http:HttpDispatcher'
+        'http = ceilometer.dispatcher.http:HttpDispatcher'
     ]
 }
 
 setup(
-    name="usage_meters",
+    name="ceilometer_dispatchers",
     version=version,
     author="sudarshan acharya",
     author_email="sudarshan.acharya@rackspace.com",

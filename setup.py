@@ -1,6 +1,6 @@
 from setuptools import setup
-from usage_meters.meta import version
-from usage_meters.meta import description
+from ceilometer_dispatchers.meta import version
+from ceilometer_dispatchers.meta import description
 
 entry_points = {
     'ceilometer.dispatcher.meter': [
@@ -14,8 +14,8 @@ setup(
     author="sudarshan acharya",
     author_email="sudarshan.acharya@rackspace.com",
     packages=[
-        'ceilometer-dispatchers',
-        'ceilometer-dispatchers.influx'
+        'ceilometer_dispatchers',
+        'ceilometer_dispatchers.influx'
     ],
     entry_points=entry_points,
     long_description=description

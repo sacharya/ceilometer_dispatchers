@@ -4,7 +4,7 @@ from ceilometer_dispatchers.meta import description
 
 entry_points = {
     'ceilometer.dispatcher.event': [
-        'http = ceilometer.dispatcher.http:HttpDispatcher'
+        'influx = ceilometer_dispatchers.influx.http:HttpDispatcher'
     ]
 }
 

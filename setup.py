@@ -3,7 +3,7 @@ from ceilometer_dispatchers.meta import version
 from ceilometer_dispatchers.meta import description
 
 entry_points = {
-    'ceilometer.dispatcher.meter': [
+    'ceilometer.dispatcher.event': [
         'http = ceilometer.dispatcher.http:HttpDispatcher'
     ]
 }

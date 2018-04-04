@@ -44,7 +44,7 @@ http_dispatcher_opts = [
                     'is used. Set to False to ignore SSL cert verification.'),
 ]
 
-cfg.CONF.register_opts(http_dispatcher_opts, group="dispatcher_http")
+cfg.CONF.register_opts(http_dispatcher_opts, group="dispatcher_influx")
 
 
 class HttpDispatcher(dispatcher.MeterDispatcherBase,
@@ -75,15 +75,15 @@ class HttpDispatcher(dispatcher.MeterDispatcherBase,
     def __init__(self, conf):
         super(HttpDispatcher, self).__init__(conf)
         self.headers = {'Content-type': 'application/json'}
-        self.timeout = self.conf.dispatcher_http.timeout
-        self.target = self.conf.dispatcher_http.target
-        self.event_target = (self.conf.dispatcher_http.event_target or
+        self.timeout = self.conf.dispatcher_influx.timeout
+        self.target = self.conf.dispatcher_influx.target
+        self.event_target = (self.conf.dispatcher_influx.event_target or
                              self.target)
         try:
             self.verify_ssl = strutils.bool_from_string(
-                self.conf.dispatcher_http.verify_ssl, strict=True)
+                self.conf.dispatcher_influx.verify_ssl, strict=True)
         except ValueError:
-            self.verify_ssl = self.conf.dispatcher_http.verify_ssl or True
+            self.verify_ssl = self.conf.dispatcher_influx.verify_ssl or True
 
     def record_metering_data(self, data):
         if self.target == '':
